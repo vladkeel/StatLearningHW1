@@ -20,12 +20,12 @@ part_df = part_df.rename(index=str, columns={'Jitter.Per' : 'Jitter_Per', 'Jitte
 def rse(X, y):
     o = np.ones((np.size(X, 0), 1))
     Xwone = np.append(o, X, axis=1)
-    xtx = np.matmul(Xwone.T, Xwone)**-1
-    xty = np.matmul(Xwone.T, y.reshape(y.size,1))
+    xtx = np.linalg.inv(np.matmul(Xwone.T, Xwone))
+    xty = np.matmul(Xwone.T, y.reshape(y.size, 1))
     return np.matmul(xtx, xty)
 
 
-dfx = df[['Jitter.Per', 'Jitter.Abs', 'Shimmer', 'Shimmer.dB', 'NHR', 'HNR']]
+dfx = df[['Jitter.Per', 'RPDE', 'Shimmer', 'Shimmer.dB', 'NHR', 'HNR']]
 dfy = df['motor_UPDRS']
 print(rse(np.array(dfx), np.array(dfy)))
 
@@ -33,4 +33,5 @@ print(rse(np.array(dfx), np.array(dfy)))
 
 est = ols(formula=r' motor_UPDRS ~  Jitter_Per + Jitter_Abs + Shimmer + Shimmer_dB + NHR + HNR', data=part_df).fit()
 print(est.summary())
+print(est.pvalues)
 
