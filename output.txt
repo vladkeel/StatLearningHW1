@@ -1,0 +1,59 @@
+        subject.ID          age     ...               DFA          PPE
+count  5875.000000  5875.000000     ...       5875.000000  5875.000000
+mean     21.494128    64.804936     ...          0.653240     0.219589
+std      12.372279     8.821524     ...          0.070902     0.091498
+min       1.000000    36.000000     ...          0.514040     0.021983
+25%      10.000000    58.000000     ...          0.596180     0.156340
+50%      22.000000    65.000000     ...          0.643600     0.205500
+75%      33.000000    72.000000     ...          0.711335     0.264490
+max      42.000000    85.000000     ...          0.865600     0.731730
+
+[8 rows x 22 columns]Index(['subject.ID', 'age', 'sex', 'test_time', 'motor_UPDRS', 'total_UPDRS',
+       'Jitter.Per', 'Jitter.Abs', 'Jitter.RAP', 'Jitter.PPQ5', 'Jitter.DDP',
+       'Shimmer', 'Shimmer.dB', 'Shimmer.APQ3', 'Shimmer.APQ5',
+       'Shimmer.APQ11', 'Shimmer.DDA', 'NHR', 'HNR', 'RPDE', 'DFA', 'PPE'],
+      dtype='object')[[  27.2661836 ]
+ [  -7.35250887]
+ [   2.9857028 ]
+ [-156.72205171]
+ [  17.2782292 ]
+ [  -7.25195801]
+ [  -0.338902  ]]                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            motor_UPDRS   R-squared:                       0.041
+Model:                            OLS   Adj. R-squared:                  0.041
+Method:                 Least Squares   F-statistic:                     42.33
+Date:                Sun, 18 Nov 2018   Prob (F-statistic):           7.67e-51
+Time:                        19:41:56   Log-Likelihood:                -20522.
+No. Observations:                5875   AIC:                         4.106e+04
+Df Residuals:                    5868   BIC:                         4.111e+04
+Df Model:                           6                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     33.7453      1.216     27.744      0.000      31.361      36.130
+Jitter_Per   257.8164     46.938      5.493      0.000     165.800     349.832
+Jitter_Abs -5.083e+04   6216.315     -8.176      0.000    -6.3e+04   -3.86e+04
+Shimmer     -168.3509     32.730     -5.144      0.000    -232.513    -104.188
+Shimmer_dB    17.7895      3.700      4.808      0.000      10.536      25.043
+NHR          -10.7589      3.656     -2.943      0.003     -17.926      -3.592
+HNR           -0.5191      0.045    -11.626      0.000      -0.607      -0.432
+==============================================================================
+Omnibus:                      964.930   Durbin-Watson:                   0.090
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              223.468
+Skew:                           0.097   Prob(JB):                     2.98e-49
+Kurtosis:                       2.064   Cond. No.                     1.32e+06
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.32e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.Intercept     2.719449e-159
+Jitter_Per     4.124977e-08
+Jitter_Abs     3.551564e-16
+Shimmer        2.781884e-07
+Shimmer_dB     1.565511e-06
+NHR            3.265988e-03
+HNR            6.585259e-31
+dtype: float64
