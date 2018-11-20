@@ -14,8 +14,8 @@ with open('output.txt', 'w') as f:
     used_variables = ['motor_UPDRS', 'Jitter.Per', 'Jitter.Abs', 'Shimmer', 'Shimmer.dB', 'NHR', 'HNR']
     part_df = df[used_variables]
     part_df = part_df.rename(index=str, columns={'Jitter.Per' : 'Jitter_Per', 'Jitter.Abs' : 'Jitter_Abs', 'Shimmer.dB' : 'Shimmer_dB'})
-    #grr = pd.plotting.scatter_matrix(part_df, figsize=(10, 10))
-    #plt.show()
+    grr = pd.plotting.scatter_matrix(part_df, figsize=(10, 10))
+    plt.show()
 
     # Part 4:
     def rse(X, y):

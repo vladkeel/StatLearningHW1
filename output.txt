@@ -57,3 +57,9 @@ Shimmer_dB     1.565511e-06
 NHR            3.265988e-03
 HNR            6.585259e-31
 dtype: float64
+
+
+
+129 is: [7.2 3.  5.8 1.6].
+prob for ve is 0.5818135053906193
+prob from vi is 0.5592646803242882
